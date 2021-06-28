@@ -21,6 +21,17 @@ Article.findByIdAndDelete('60d9f8f837a68624c8978489').then(() => {
   console.log(err)
 })
 
+// Edit data
+Article.findByIdAndUpdate('60d9f8f837a68624c8978489', {
+  title: 'Aprendendo JavaScript',
+  author: 'Joaby',
+  body: 'Aprendendo JavaScript e seus conceitos incríveis'
+}).then(() => {
+  console.log('usuário editado')
+}).catch((err) => {
+  console.log(err)
+})
+
 // Register data
 const artigo = new Article({
   title: 'Aprendendo C# do ZERO',
