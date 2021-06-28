@@ -19,5 +19,8 @@
   "homepage": "https://github.com/joaby-oliveira/mongodb-crud#readme",
   "dependencies": {
     "mongoose": "^5.13.0"
+  },
+  "devDependencies": {
+    "standard": "^16.0.3"
   }
 }
