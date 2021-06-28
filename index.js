@@ -5,13 +5,25 @@ mongoose.connect('mongodb://localhost:27017/aprendendoMongo', { useNewUrlParser:
 
 const Article = mongoose.model('Article', articleModel)
 
+Article.find({ 'resume.author': 'Joaby' }).then(articles => {
+  console.log(articles)
+}).catch(err => {
+  console.log(err)
+})
+
+Article.findByIdAndDelete('60d9f8f837a68624c8978489').then(() => {
+  console.log('Artigo excluído com sucesso')
+}).catch(err => {
+  console.log(err)
+})
+
 const artigo = new Article({
   title: 'Aprendendo C# do ZERO',
   author: 'Joaby',
   body: 'Será que você consegue aprender algo tão incrível? (:',
   special: true,
   resume: {
-    content: 'Bla bla bla, vê se faz sentido...',
+    content: 'Esse assunto é muito interessante!',
     author: 'Joaby'
   }
 })
